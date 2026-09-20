@@ -1,0 +1,17 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*
+.streamlit/secrets.toml
+raw/
+evidence/
+upload/
+private/
+*contacts*.csv
+*HoneyBook*.csv
+*.ipynb
+*.zip
+local-checks/

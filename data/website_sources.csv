@@ -1,0 +1,16 @@
+month,level,parent,source,visits
+2026-07,channel,,Direct,245
+2026-07,channel,,Search,39
+2026-07,channel,,Social,35
+2026-07,channel,,Referral,3
+2026-07,social_platform,Social,Facebook,21
+2026-07,social_platform,Social,LinkedIn,8
+2026-07,social_platform,Social,Instagram,6
+2026-08,channel,,Direct,306
+2026-08,channel,,Search,54
+2026-08,channel,,Social,21
+2026-08,channel,,Referral,3
+2026-08,social_platform,Social,Facebook,10
+2026-08,social_platform,Social,LinkedIn,7
+2026-08,social_platform,Social,Instagram,3
+2026-08,social_platform,Social,Pinterest,1

@@ -1,0 +1,97 @@
+month,platform,metric,label,value,unit,data_status,precision,aggregation,scope,dashboard_default
+2026-07,ClickFunnels,report_funnel_optins,Visibility Report opt-ins,0,count,observed,as_displayed,period_total,Recorded opt-in events for this funnel; not all workspace contacts,True
+2026-08,ClickFunnels,report_funnel_optins,Visibility Report opt-ins,0,count,observed,as_displayed,period_total,Recorded opt-in events for this funnel; not all workspace contacts,True
+2026-07,ClickFunnels,report_funnel_thank_you_views,Visibility Report thank-you views,0,count,observed,as_displayed,period_total,Visibility Report 2026 thank-you step only,False
+2026-08,ClickFunnels,report_funnel_thank_you_views,Visibility Report thank-you views,0,count,observed,as_displayed,period_total,Visibility Report 2026 thank-you step only,False
+2026-07,ClickFunnels,report_funnel_unique_views,Visibility Report unique views,2,people,observed,as_displayed,period_unique,Visibility Report 2026 funnel only,False
+2026-08,ClickFunnels,report_funnel_unique_views,Visibility Report unique views,1,people,observed,as_displayed,period_unique,Visibility Report 2026 funnel only,False
+2026-07,ClickFunnels,report_funnel_views,Visibility Report funnel views,2,count,observed,as_displayed,period_total,Visibility Report 2026 funnel only,True
+2026-08,ClickFunnels,report_funnel_views,Visibility Report funnel views,1,count,observed,as_displayed,period_total,Visibility Report 2026 funnel only,True
+2026-07,Email,email_performance,Email performance,,count,pending_collection,not_available,unavailable,Monthly campaign data not collected,False
+2026-08,Email,email_performance,Email performance,,count,pending_collection,not_available,unavailable,Monthly campaign data not collected,False
+2026-07,Facebook,follows,Follows,15,count,observed,exact_as_reported,sum_daily,"Reported follows, not net follower growth",True
+2026-08,Facebook,follows,Follows,8,count,observed,exact_as_reported,sum_daily,"Reported follows, not net follower growth",True
+2026-07,Facebook,interactions,Content interactions,41,count,observed,exact_as_reported,sum_daily,Platform Results export,True
+2026-08,Facebook,interactions,Content interactions,50,count,observed,exact_as_reported,sum_daily,Platform Results export,True
+2026-07,Facebook,link_clicks,Link clicks,3,count,observed,exact_as_reported,sum_daily,Platform Results export; not completed inquiries,True
+2026-08,Facebook,link_clicks,Link clicks,1,count,observed,exact_as_reported,sum_daily,Platform Results export; not completed inquiries,True
+2026-07,Facebook,monthly_viewers,Facebook monthly viewers (approx.),1900,people,rounded,rounded_to_0.1K,period_unique,Rounded monthly card; never sum daily viewers,True
+2026-08,Facebook,monthly_viewers,Facebook monthly viewers (approx.),2000,people,rounded,rounded_to_0.1K,period_unique,Rounded monthly card; never sum daily viewers,True
+2026-07,Facebook,views,Facebook views,2644,count,observed,exact_as_reported,sum_daily,Facebook Results Views export,True
+2026-08,Facebook,views,Facebook views,3223,count,observed,exact_as_reported,sum_daily,Facebook Results Views export,True
+2026-07,Facebook,visits,Visits,250,count,observed,exact_as_reported,sum_daily,Platform-specific website or page visits,True
+2026-08,Facebook,visits,Visits,297,count,observed,exact_as_reported,sum_daily,Platform-specific website or page visits,True
+2026-07,GA4,ga4_sessions,GA4 sessions,,count,pending_confirmation,not_available,unavailable,Owner believes GA4 absent; installation/access unverified,False
+2026-08,GA4,ga4_sessions,GA4 sessions,,count,pending_confirmation,not_available,unavailable,Owner believes GA4 absent; installation/access unverified,False
+2026-07,HoneyBook,all_booked_projects,All projects booked during month,,count,pending_collection,not_available,unavailable,"Requires a complete booked-date extract, including older creation cohorts",False
+2026-08,HoneyBook,all_booked_projects,All projects booked during month,,count,pending_collection,not_available,unavailable,"Requires a complete booked-date extract, including older creation cohorts",False
+2026-07,HoneyBook,attributed_revenue,Marketing-attributed revenue,,currency_unconfirmed,pending_collection,not_available,unavailable,Requires supported campaign-to-lead-to-payment linkage,False
+2026-08,HoneyBook,attributed_revenue,Marketing-attributed revenue,,currency_unconfirmed,pending_collection,not_available,unavailable,Requires supported campaign-to-lead-to-payment linkage,False
+2026-07,HoneyBook,booked_calls,Confirmed booked calls,,count,pending_collection,not_available,unavailable,Requires scheduler/CRM event evidence; project Booked status is different,True
+2026-08,HoneyBook,booked_calls,Confirmed booked calls,,count,pending_collection,not_available,unavailable,Requires scheduler/CRM event evidence; project Booked status is different,True
+2026-07,HoneyBook,booked_in_month_within_creation_export_utc,In-month booked projects in available creation export,1,count,provisional,exact_as_reported,filtered_cohort_utc,"Partial creation cohort, UTC booked-date filter; not complete business bookings",False
+2026-08,HoneyBook,booked_in_month_within_creation_export_utc,In-month booked projects in available creation export,2,count,provisional,exact_as_reported,filtered_cohort_utc,"Partial creation cohort, UTC booked-date filter; not complete business bookings",False
+2026-07,HoneyBook,booked_records_in_creation_export,Booked records in creation export,1,count,observed,exact_as_reported,snapshot_status,Status at export time; not all bookings occurring in month,False
+2026-08,HoneyBook,booked_records_in_creation_export,Booked records in creation export,3,count,observed,exact_as_reported,snapshot_status,Status at export time; not all bookings occurring in month,False
+2026-07,HoneyBook,card_payment_total,Recorded card payment amount,3542,currency_unconfirmed,provisional,exact_as_reported,sum_transactions,Credit Card payment rows only,False
+2026-08,HoneyBook,card_payment_total,Recorded card payment amount,6946,currency_unconfirmed,provisional,exact_as_reported,sum_transactions,Credit Card payment rows only,False
+2026-07,HoneyBook,lead_records,HoneyBook lead records,5,count,observed,exact_as_reported,report_rows,Rows in monthly lead exports; qualification and acquisition channel unverified,True
+2026-08,HoneyBook,lead_records,HoneyBook lead records,9,count,observed,exact_as_reported,report_rows,Rows in monthly lead exports; qualification and acquisition channel unverified,True
+2026-07,HoneyBook,manual_payment_total,Recorded manual payment amount,100,currency_unconfirmed,provisional,exact_as_reported,sum_transactions,Manual payment rows; August includes 450 with trade note,False
+2026-08,HoneyBook,manual_payment_total,Recorded manual payment amount,450,currency_unconfirmed,provisional,exact_as_reported,sum_transactions,Manual payment rows; August includes 450 with trade note,False
+2026-07,HoneyBook,payment_records,Recorded payments,5,count,observed,exact_as_reported,transaction_rows,"Dated HoneyBook payment records, excluding total footer",True
+2026-08,HoneyBook,payment_records,Recorded payments,8,count,observed,exact_as_reported,transaction_rows,"Dated HoneyBook payment records, excluding total footer",True
+2026-07,HoneyBook,project_records_in_creation_export,Project records in monthly export,5,count,observed,exact_as_reported,report_rows,Project creation export cohort; retain month selected in source,False
+2026-08,HoneyBook,project_records_in_creation_export,Project records in monthly export,10,count,observed,exact_as_reported,report_rows,Project creation export cohort; retain month selected in source,False
+2026-07,HoneyBook,recorded_payment_fees,Payment transaction fees,106.49,currency_unconfirmed,provisional,exact_as_reported,sum_transactions,HoneyBook transaction fees,False
+2026-08,HoneyBook,recorded_payment_fees,Payment transaction fees,207.32,currency_unconfirmed,provisional,exact_as_reported,sum_transactions,HoneyBook transaction fees,False
+2026-07,HoneyBook,recorded_payment_net,Recorded net payment amount,3535.51,currency_unconfirmed,provisional,exact_as_reported,sum_transactions,Net as exported; includes manual entries; currency not stated in CSV,True
+2026-08,HoneyBook,recorded_payment_net,Recorded net payment amount,7188.68,currency_unconfirmed,provisional,exact_as_reported,sum_transactions,Net as exported; includes manual entries; currency not stated in CSV,True
+2026-07,HoneyBook,recorded_payment_total,Recorded payment amount,3642,currency_unconfirmed,provisional,exact_as_reported,sum_transactions,Gross recorded transactions including manual entries; not attributed revenue or confirmed cash receipts,True
+2026-08,HoneyBook,recorded_payment_total,Recorded payment amount,7396,currency_unconfirmed,provisional,exact_as_reported,sum_transactions,Gross recorded transactions including manual entries; not attributed revenue or confirmed cash receipts,True
+2026-07,HoneyBook,recorded_refunds,Recorded refunds,0,currency_unconfirmed,provisional,exact_as_reported,sum_transactions,Refund values in supplied payment reports,False
+2026-08,HoneyBook,recorded_refunds,Recorded refunds,0,currency_unconfirmed,provisional,exact_as_reported,sum_transactions,Refund values in supplied payment reports,False
+2026-07,HoneyBook,trade_flagged_amount,Amount flagged as trade,0,currency_unconfirmed,provisional,exact_as_reported,sum_transactions,Payment rows whose charge notes explicitly mention trade,False
+2026-08,HoneyBook,trade_flagged_amount,Amount flagged as trade,450,currency_unconfirmed,provisional,exact_as_reported,sum_transactions,Payment rows whose charge notes explicitly mention trade,False
+2026-07,HoneyBook,unknown_lead_source_records,Leads with unknown source,4,count,observed,exact_as_reported,report_rows,Monthly lead export records with Unknown/blank source,True
+2026-08,HoneyBook,unknown_lead_source_records,Leads with unknown source,8,count,observed,exact_as_reported,report_rows,Monthly lead export records with Unknown/blank source,True
+2026-07,Instagram,facebook_views_in_instagram_card,Facebook component of Instagram Views card,2520,count,observed,as_displayed,period_total,Reconciliation component; do not add to Facebook's own views,False
+2026-08,Instagram,facebook_views_in_instagram_card,Facebook component of Instagram Views card,2317,count,observed,as_displayed,period_total,Reconciliation component; do not add to Facebook's own views,False
+2026-07,Instagram,follows,Follows,,count,unavailable,not_available,sum_daily,"Reported follows, not net follower growth",True
+2026-08,Instagram,follows,Follows,,count,unavailable,not_available,sum_daily,"Reported follows, not net follower growth",True
+2026-07,Instagram,interactions,Content interactions,395,count,observed,exact_as_reported,sum_daily,Platform Results export,True
+2026-08,Instagram,interactions,Content interactions,352,count,observed,exact_as_reported,sum_daily,Platform Results export,True
+2026-07,Instagram,link_clicks,Link clicks,2,count,observed,exact_as_reported,sum_daily,Platform Results export; not completed inquiries,True
+2026-08,Instagram,link_clicks,Link clicks,0,count,observed,exact_as_reported,sum_daily,Platform Results export; not completed inquiries,True
+2026-07,Instagram,monthly_reach,Instagram monthly reach (approx.),4800,people,rounded,rounded_to_0.1K,period_unique,Rounded monthly card; never sum daily reach,True
+2026-08,Instagram,monthly_reach,Instagram monthly reach (approx.),2600,people,rounded,rounded_to_0.1K,period_unique,Rounded monthly card; never sum daily reach,True
+2026-07,Instagram,profile_visits,Instagram profile visits,74,count,observed,exact_as_reported,sum_daily,Instagram profile visits export,True
+2026-08,Instagram,profile_visits,Instagram profile visits,44,count,observed,exact_as_reported,sum_daily,Instagram profile visits export,True
+2026-07,Instagram,views_combined,"Instagram card views, including Facebook",19024,count,observed,exact_as_reported,sum_daily,Instagram Results export combines both platforms; not an Instagram-only KPI,False
+2026-08,Instagram,views_combined,"Instagram card views, including Facebook",12285,count,observed,exact_as_reported,sum_daily,Instagram Results export combines both platforms; not an Instagram-only KPI,False
+2026-07,Instagram,views_instagram_only,Instagram-only views,16504,count,observed,as_displayed,period_total,Instagram component of the Instagram Results Views card,True
+2026-08,Instagram,views_instagram_only,Instagram-only views,9968,count,observed,as_displayed,period_total,Instagram component of the Instagram Results Views card,True
+2026-07,Meta Ads,ad_impressions,Meta Ads impressions,,count,pending_access,not_available,unavailable,Correct Meta Ads account export pending,False
+2026-08,Meta Ads,ad_impressions,Meta Ads impressions,,count,pending_access,not_available,unavailable,Correct Meta Ads account export pending,False
+2026-07,Meta Ads,ad_link_clicks,Meta Ads link clicks,,count,pending_access,not_available,unavailable,Correct Meta Ads account export pending,False
+2026-08,Meta Ads,ad_link_clicks,Meta Ads link clicks,,count,pending_access,not_available,unavailable,Correct Meta Ads account export pending,False
+2026-07,Meta Ads,spend,Meta Ads spend,,currency_unconfirmed,pending_access,not_available,unavailable,Correct account (account) access/export pending,True
+2026-08,Meta Ads,spend,Meta Ads spend,,currency_unconfirmed,pending_access,not_available,unavailable,Correct account (account) access/export pending,True
+2026-07,Squarespace,average_time_on_page_seconds,Average time on page,78,seconds,observed,as_displayed,platform_page_average,"Squarespace displayed page average, not session duration",True
+2026-08,Squarespace,average_time_on_page_seconds,Average time on page,87,seconds,observed,as_displayed,platform_page_average,"Squarespace displayed page average, not session duration",True
+2026-07,Squarespace,bounce_rate,Website bounce rate,0.8534,proportion,observed,as_displayed,platform_period_rate,Reported Squarespace rate; do not average page rates,True
+2026-08,Squarespace,bounce_rate,Website bounce rate,0.9226,proportion,observed,as_displayed,platform_period_rate,Reported Squarespace rate; do not average page rates,True
+2026-07,Squarespace,button_clicks,Website button clicks,22,count,observed,as_displayed,sum,"Tracked button click events, not completed forms",True
+2026-08,Squarespace,button_clicks,Website button clicks,14,count,observed,as_displayed,sum,"Tracked button click events, not completed forms",True
+2026-07,Squarespace,exit_rate,Website exit rate,0.7578,proportion,observed,as_displayed,platform_period_rate,Reported Squarespace rate,True
+2026-08,Squarespace,exit_rate,Website exit rate,0.8972,proportion,observed,as_displayed,platform_period_rate,Reported Squarespace rate,True
+2026-07,Squarespace,pageviews,Website pageviews,351,count,observed,as_displayed,sum,Squarespace site,True
+2026-08,Squarespace,pageviews,Website pageviews,360,count,observed,as_displayed,sum,Squarespace site,True
+2026-07,Squarespace,recorded_form_submissions,Squarespace-recorded form submissions,0,count,observed,as_displayed,sum,Squarespace tracking only; excludes unobserved external form completions,True
+2026-08,Squarespace,recorded_form_submissions,Squarespace-recorded form submissions,0,count,observed,as_displayed,sum,Squarespace tracking only; excludes unobserved external form completions,True
+2026-07,Squarespace,unique_visitors,Website unique visitors,308,people,observed,as_displayed,period_unique,Squarespace monthly unique visitors,True
+2026-08,Squarespace,unique_visitors,Website unique visitors,361,people,observed,as_displayed,period_unique,Squarespace monthly unique visitors,True
+2026-07,Squarespace,visits,Visits,322,count,observed,as_displayed,sum_daily,Platform-specific website or page visits,True
+2026-08,Squarespace,visits,Visits,384,count,observed,as_displayed,sum_daily,Platform-specific website or page visits,True
+2026-07,Website tracker,tracked_visitors,Website tracker visitors,,people,pending_collection,not_available,unavailable,Google Sheet data and tracker provider pending,False
+2026-08,Website tracker,tracked_visitors,Website tracker visitors,,people,pending_collection,not_available,unavailable,Google Sheet data and tracker provider pending,False

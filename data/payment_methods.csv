@@ -1,0 +1,5 @@
+month,payment_method,payment_count,recorded_amount,recorded_net_amount,transaction_fees
+2026-07,Check Manual,1,100,100,0
+2026-07,Credit Card,4,3542,3435.51,106.49
+2026-08,Credit Card,7,6946,6738.68,207.32
+2026-08,Other Manual,1,450,450,0

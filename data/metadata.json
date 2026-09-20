@@ -1,0 +1,73 @@
+{
+  "client": "PrismHaus",
+  "periods": [
+    "2026-07",
+    "2026-08"
+  ],
+  "snapshot_date": "2026-09-20",
+  "report_status": "Draft",
+  "collection_status": "Pending",
+  "currency_status": "Unconfirmed",
+  "refresh_mode": "Manual snapshot",
+  "files": [
+    "metrics.csv",
+    "social_daily.csv",
+    "website_sources.csv",
+    "website_pages.csv",
+    "website_buttons.csv",
+    "crm_sources.csv",
+    "payment_methods.csv"
+  ],
+  "coverage": [
+    {
+      "source": "Squarespace",
+      "status": "Available",
+      "detail": "Monthly traffic, all viewed pages and all positive button actions. External inquiry completions are not measured here."
+    },
+    {
+      "source": "Facebook",
+      "status": "Available with limits",
+      "detail": "Daily exports and rounded monthly viewers."
+    },
+    {
+      "source": "Instagram",
+      "status": "Available with limits",
+      "detail": "Instagram-only monthly views. Rounded reach. Follows unavailable. Daily exported views include Facebook."
+    },
+    {
+      "source": "ClickFunnels",
+      "status": "Limited scope",
+      "detail": "Visibility Report 2026 funnel only. Workspace contacts are not monthly opt-ins."
+    },
+    {
+      "source": "HoneyBook",
+      "status": "Available with limits",
+      "detail": "Monthly lead records and recorded payments. Currency and the August trade entry need confirmation. Booked calls are pending."
+    },
+    {
+      "source": "Meta Ads",
+      "status": "Pending access",
+      "detail": "Advertising account access or monthly exports pending. No spend, CPL or ROAS shown."
+    },
+    {
+      "source": "Website tracker",
+      "status": "Pending data",
+      "detail": "Tracking Sheet and provider details pending."
+    },
+    {
+      "source": "GA4 / GTM",
+      "status": "Unconfirmed",
+      "detail": "Installation and access have not been verified."
+    },
+    {
+      "source": "Email and other channels",
+      "status": "Pending data",
+      "detail": "Monthly exports and final reporting scope pending."
+    },
+    {
+      "source": "Attribution",
+      "status": "Pending data",
+      "detail": "Cross-platform event linkage, confirmed calls and campaign-attributed revenue are unavailable."
+    }
+  ]
+}
