@@ -3,6 +3,7 @@ from pathlib import Path
 import json
 import math
 import pandas as pd
+from synthetic_honeybook import validate_demo
 
 DATA=Path(__file__).resolve().parent/"data"
 FILES=["metrics","social_daily","website_sources","website_pages","website_buttons","crm_sources","payment_methods"]
@@ -11,6 +12,10 @@ MISSING={"unavailable":"Unavailable","pending_access":"Pending access","pending_
 def load_data():
     frames={name:pd.read_csv(DATA/f"{name}.csv") for name in FILES}
     metadata=json.loads((DATA/"metadata.json").read_text())
+    try:
+        validate_demo(frames["metrics"], frames["crm_sources"], frames["payment_methods"])
+    except (AssertionError, ValueError, KeyError):
+        raise ValueError("HoneyBook fixture mismatch. Restore the reviewed synthetic dataset.") from None
     return frames,metadata
 
 def month_name(month,short=False):
@@ -31,6 +36,7 @@ def display_value(row):
     if row.data_status=="rounded": return f"≈{row.value/1000:,.1f}K" if row.value>=1000 else f"≈{row.value:,.0f}"
     if row.unit=="proportion":return f"{row.value:.2%}"
     if row.unit=="currency_unconfirmed":return f"{row.value:,.2f}"
+    if row.unit=="USD":return f"${row.value:,.2f}"
     if row.unit=="seconds":return f"{row.value:,.0f}s"
     return f"{row.value:,.0f}"
 

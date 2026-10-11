@@ -1,5 +1,7 @@
 report_month,lead_source,lead_records
-2026-07,Industry Referral,1
-2026-07,Unknown,4
-2026-08,Google,1
-2026-08,Unknown,8
+2026-07,Referral (demo),10
+2026-07,Search (demo),8
+2026-07,Unknown (demo),6
+2026-08,Referral (demo),13
+2026-08,Search (demo),12
+2026-08,Unknown (demo),7

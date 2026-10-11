@@ -6,6 +6,9 @@ __pycache__/
 .env
 .env.*
 .streamlit/secrets.toml
+.streamlit/.access-*.tmp
+secrets*.toml
+*.log
 raw/
 evidence/
 upload/

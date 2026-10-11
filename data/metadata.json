@@ -7,7 +7,7 @@
   "snapshot_date": "2026-09-20",
   "report_status": "Draft",
   "collection_status": "Pending",
-  "currency_status": "Unconfirmed",
+  "currency_status": "Confirmed: USD",
   "refresh_mode": "Manual snapshot",
   "files": [
     "metrics.csv",
@@ -41,8 +41,8 @@
     },
     {
       "source": "HoneyBook",
-      "status": "Available with limits",
-      "detail": "Monthly lead records and recorded payments. Currency and the August trade entry need confirmation. Booked calls are pending."
+      "status": "Illustrative only",
+      "detail": "Synthetic lead and payment examples in USD. No real HoneyBook business data is included. Confirmed calls and attribution remain pending."
     },
     {
       "source": "Meta Ads",
@@ -69,5 +69,8 @@
       "status": "Pending data",
       "detail": "Cross-platform event linkage, confirmed calls and campaign-attributed revenue are unavailable."
     }
-  ]
+  ],
+  "currency": "USD",
+  "build_version": "2026-10-11-review-v2",
+  "honeybook_data": "Synthetic only"
 }

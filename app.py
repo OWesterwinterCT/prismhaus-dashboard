@@ -1,7 +1,9 @@
-"""Public, aggregate-only monthly reporting dashboard."""
+"""PrismHaus review dashboard: synthetic HoneyBook, original other sources."""
 import pandas as pd
 import plotly.express as px
 import streamlit as st
+from branding import brand
+from login import require_login, session_controls
 
 from dashboard_data import (
     load_data, month_name, previous_month, metric_row, display_value,
@@ -28,17 +30,24 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-@st.cache_data
+# Access is checked before any dataset is loaded, rendered or offered for download.
+sidebar_area = st.sidebar.empty()
+require_login()
+
 def get_data():
     return load_data()
 
-frames, meta = get_data()
+try:
+    frames, meta = get_data()
+except ValueError:
+    st.error("The HoneyBook demo dataset failed validation. Please contact the dashboard owner.")
+    st.stop()
 metrics = frames["metrics"]
 periods = sorted(meta["periods"])
 PINK, TEAL, NAVY, GRAY = "#C62F70", "#167D8D", "#343A56", "#ABB0BA"
 
-with st.sidebar:
-    st.markdown('<div class="wordmark">PRISMHAUS<span style="color:#C62F70">.</span></div>', unsafe_allow_html=True)
+with sidebar_area.container():
+    brand()
     st.caption("Monthly performance dashboard")
     st.divider()
     month = st.selectbox("Reporting month", periods, index=len(periods)-1, format_func=month_name, key="month")
@@ -52,11 +61,16 @@ with st.sidebar:
     st.caption("July–August 2026\n\nSnapshot: 20 September 2026\n\nManual refresh · aggregate data")
     st.download_button("Download monthly figures", public_monthly_table(metrics, month).to_csv(index=False),
                        file_name=f"prismhaus-{month}-metrics.csv", mime="text/csv", use_container_width=True)
+    st.caption("HoneyBook exports contain illustrative data only.")
+    st.divider()
+    session_controls()
+    st.caption("Build: 2026-10-11 · Review v2")
 
 selected_months = [prior, month] if compare else [month]
 st.markdown('<div class="kicker">Performance / '+section+'</div>', unsafe_allow_html=True)
 st.title("Monthly performance" if section == "Overview" else section)
 st.caption(month_name(month) + (f"  ·  compared with {month_name(prior)}" if compare else "  ·  monthly snapshot"))
+st.info("HoneyBook figures are illustrative, not actual business results. Other sources retain the original reporting data.")
 
 def row(platform, key, period=None):
     return metric_row(metrics, period or month, platform, key)
@@ -70,8 +84,6 @@ def cards(items):
         old = row(platform, key, prior) if compare else None
         delta = delta_label(current, old)
         qualifier = str(current.scope)
-        if current.unit == "currency_unconfirmed":
-            qualifier += " Currency is unconfirmed. Recorded amounts are not verified cash receipts."
         with col:
             st.metric(label, display_value(current), delta, border=True,
                       delta_color=direction[0] if direction else "off", help=qualifier,
@@ -97,13 +109,13 @@ def section_note(text):
     st.caption(text)
 
 def overview():
-    cards([("Squarespace","visits","Website visits"),("HoneyBook","lead_records","CRM lead records"),
-           ("Squarespace","button_clicks","Website button clicks"),("HoneyBook","recorded_payment_total","Recorded payment amount")])
+    cards([("Squarespace","visits","Website visits"),("HoneyBook","lead_records","CRM leads · demo"),
+           ("Squarespace","button_clicks","Website button clicks"),("HoneyBook","recorded_payment_total","Payments · demo (USD)")])
     if month == "2026-08" and compare:
-        st.markdown('<div class="insight"><strong>More visits, fewer website actions.</strong> Visits rose 19.3% to 384, while button clicks fell 36.4% to 14. CRM lead records increased from 5 to 9; their connection to this traffic is unverified.</div>', unsafe_allow_html=True)
+        st.markdown('<div class="insight"><strong>More visits, fewer website actions.</strong> Visits rose 19.3% to 384, while button clicks fell 36.4% to 14. HoneyBook demo figures are separate examples and cannot explain these website results.</div>', unsafe_allow_html=True)
     else:
-        st.markdown('<div class="insight"><strong>A baseline for the next report.</strong> Explore traffic, content, website actions and recorded business activity. Missing channels remain pending.</div>', unsafe_allow_html=True)
-    section_note("Payments: currency unconfirmed. August includes a 450.00 entry flagged as trade. These amounts are not marketing-attributed revenue.")
+        st.markdown('<div class="insight"><strong>A baseline for the next report.</strong> Explore traffic, content, website actions and illustrative HoneyBook reporting. Missing channels remain pending.</div>', unsafe_allow_html=True)
+    section_note("HoneyBook leads and payments are synthetic examples. Payment amounts are in USD; no marketing attribution is implied.")
     left,right=st.columns(2,gap="large")
     with left:
         st.subheader("Where website visits came from")
@@ -210,24 +222,24 @@ def website():
     st.caption("Conversion rates are reproduced as reported. Button clicks are not completed inquiries, opt-ins or booked calls.")
 
 def business():
-    st.subheader("Lead records")
-    cards([("HoneyBook","lead_records","CRM lead records"),("HoneyBook","unknown_lead_source_records","Unknown source"),
+    st.subheader("HoneyBook lead records · illustrative")
+    cards([("HoneyBook","lead_records","CRM leads · demo"),("HoneyBook","unknown_lead_source_records","Unknown source · demo"),
            ("HoneyBook","booked_calls","Booked calls")])
-    st.caption("Lead records are not independently qualified leads. Booked calls remain pending; project statuses are not calendar bookings.")
+    st.caption("These are fictional lead records. Confirmed booked calls remain pending and have not been fabricated.")
     sources=frames["crm_sources"]
     sources=sources[sources.report_month.isin(selected_months)].rename(columns={"report_month":"month"})
     month_bars(sources,"lead_source","lead_records",300)
     st.divider()
-    st.subheader("Recorded payments")
-    st.info("Currency is unconfirmed. These are recorded payment amounts, not verified cash receipts or marketing-attributed revenue. August includes a 450.00 entry flagged as trade.")
-    cards([("HoneyBook","recorded_payment_total","Recorded amount"),("HoneyBook","recorded_payment_net","Recorded net amount"),
-           ("HoneyBook","recorded_payment_fees","Transaction fees"),("HoneyBook","payment_records","Payment records")])
+    st.subheader("HoneyBook payments · illustrative USD")
+    st.caption("Illustrative HoneyBook data — not actual business results. All amounts are USD.")
+    cards([("HoneyBook","recorded_payment_total","Gross · demo (USD)"),("HoneyBook","recorded_payment_net","Net · demo (USD)"),
+           ("HoneyBook","recorded_payment_fees","Fees · demo (USD)"),("HoneyBook","payment_records","Payment records · demo")])
     methods=frames["payment_methods"]
     methods=methods[methods.month.isin(selected_months)].copy()
     month_bars(methods,"payment_method","recorded_amount",300)
     current=methods[methods.month==month].drop(columns="month").rename(columns={"payment_method":"Method","payment_count":"Records","recorded_amount":"Recorded amount","recorded_net_amount":"Recorded net","transaction_fees":"Fees"})
     st.dataframe(current,hide_index=True,width="stretch",column_config={k:st.column_config.NumberColumn(format="%.2f") for k in ["Recorded amount","Recorded net","Fees"]})
-    st.caption("Payments are grouped by their recorded payment month. These totals are not a revenue cohort for the leads above.")
+    st.caption("Demo payments are grouped by month. They are not linked to actual leads, website traffic or campaigns.")
     with st.expander("ClickFunnels: Visibility Report only"):
         cards([("ClickFunnels","report_funnel_views","Funnel views"),("ClickFunnels","report_funnel_unique_views","Unique views"),
                ("ClickFunnels","report_funnel_optins","Opt-ins"),("ClickFunnels","report_funnel_thank_you_views","Thank-you views")])
@@ -240,15 +252,16 @@ def coverage():
     st.subheader("How to read this draft")
     st.markdown("""
     - **Zero** means a source recorded zero. **Pending** and **Unavailable** mean no usable figure is present.
+    - **Synthetic** means an illustrative HoneyBook example. These figures and their comparisons are not actual business results.
     - **Changes** use the July and August values in this dataset, not the platforms’ comparison badges. Rate changes are percentage points.
     - **Audiences** remain separate by platform. Approximate monthly reach/viewers have no exact percentage change.
     - **Attribution** is unverified. Website visits, clicks, CRM leads and payments are separate measures.
     - **Time boundaries** follow the available monthly reports. ClickFunnels uses Eastern Time; other workspace settings still need confirmation.
-    - **Refresh** is manual. Figures reflect the supplied exports and screenshots reviewed on 20 September 2026.
+    - **Refresh** is manual. Non-HoneyBook figures retain the supplied exports and screenshots reviewed on 20 September 2026. HoneyBook data was replaced with an independent demo fixture.
     """)
     with st.expander("Current month data dictionary"):
         st.dataframe(public_monthly_table(metrics,month),hide_index=True,width="stretch")
-    st.caption("This public app contains aggregate reporting data. Contact records and original exports are excluded.")
+    st.caption("This review app contains original non-HoneyBook aggregates and synthetic HoneyBook figures. Real HoneyBook records, contact details and original exports are excluded.")
 
 {"Overview":overview,"Social":social,"Website":website,"Leads & payments":business,"Data coverage":coverage}[section]()
 st.markdown('<div class="foot">PRISMHAUS · Draft monthly reporting · July–August 2026 · Remaining data collection pending</div>', unsafe_allow_html=True)

@@ -6,6 +6,7 @@ from pathlib import Path
 import pandas as pd
 from streamlit.testing.v1 import AppTest
 from dashboard_data import load_data, metric_row, display_value, delta_label
+from test_access import authenticated_app
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -65,7 +66,7 @@ class ReportingChecks(unittest.TestCase):
 
 class AppChecks(unittest.TestCase):
     def test_both_months_and_every_section(self):
-        app=AppTest.from_file(str(ROOT/"app.py")).run(timeout=30)
+        app=authenticated_app()
         self.assertFalse(app.exception)
         self.assertEqual(app.metric[0].value,"384")
         self.assertEqual(app.metric[0].delta,"+19.3%")
@@ -79,7 +80,7 @@ class AppChecks(unittest.TestCase):
                         self.assertTrue(all(not metric.delta for metric in app.metric))
 
     def test_social_platform_and_daily_scope(self):
-        app=AppTest.from_file(str(ROOT/"app.py")).run(timeout=30)
+        app=authenticated_app()
         app.sidebar.radio(key="section").set_value("Social").run()
         self.assertEqual(app.metric[0].value,"9,968")
         self.assertEqual(app.metric[5].value,"Unavailable")
